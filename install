@@ -1,0 +1,23 @@
+#!/bin/sh
+cd ~
+sudo apt-get install zsh terminator vim-gnome curl fonts-powerline exuberant-ctags clang-format-3.5
+silversearcher-ag build-essential cmake python-dev python3  gitk
+
+#git clone https://github.com/powerline/fonts.git
+#sh fonts/install.sh
+
+if [ ! -d ".oh-my-zsh" ]; then
+    sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+else
+    echo "oh-myzsh already installed: skipping"
+fi
+
+if [ ! -d "~/.vim/bundle/Vundle.vim" ]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+else
+    echo "vundle already installed: skipping"
+fi
+
+git config --global user.email "tiago.bonetti@gmail.com"
+git config --global user.name "Tiago Bonetti"
+
