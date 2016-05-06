@@ -193,8 +193,8 @@ let g:syntastic_cpp_checkers=['cppcheck']
 let g:cpp_class_scope_highlight = 1
 
 " clang
-let g:clang_format#command = "clang-format-3.5"
-autocmd FileType c,cpp let g:clang_format#auto_format = 1
+let g:clang_format#command = "clang-format-3.7"
+autocmd FileType c,cpp let g:clang_format#auto_format = 0
 
 " <C-> move
 nmap <C-k> :bnext<CR>
