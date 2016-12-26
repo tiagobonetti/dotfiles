@@ -22,12 +22,15 @@ echo "Linked: \"$2/$1\" -> \"$1\""
 }
 
 link .zshrc ~
-link .vimrc ~
+
+mkdir -p ~/.config/nvim
+link .vimrc ~/.config/nvim
+
+mkdir -p ~/.oh-my-zsh/custom
+link notify-osd.zsh ~/.oh-my-zsh/custom
 
 mkdir -p ~/.oh-my-zsh/custom/themes
 link bonetti.zsh-theme ~/.oh-my-zsh/custom/themes
-link notify-osd.zsh    ~/.oh-my-zsh/custom
-link beyond.zsh        ~/.oh-my-zsh/custom
 
 mkdir -p ~/.oh-my-zsh/custom/plugins/ag
 link ag/_ag            ~/.oh-my-zsh/custom/plugins

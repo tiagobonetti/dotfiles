@@ -1,99 +1,64 @@
-" Vundle
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
-
+call plug#begin('~/.config/nvim/plugged')
 " small functions
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-obsession'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'arecarn/crunch.vim'
-Plugin 'godlygeek/tabular'
-
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-unimpaired'
+Plug 'tomtom/tcomment_vim'
+Plug 'arecarn/crunch.vim'
+Plug 'godlygeek/tabular'
 " Visuals
-Plugin 'bling/vim-airline'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'BoltsJ/syntoggle.vim'
-
-" Navigating
-Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
-Plugin 'moll/vim-bbye'
-Plugin 'rking/ag.vim'
-
+Plug 'bling/vim-airline'
+Plug 'airblade/vim-gitgutter'
+Plug 'BoltsJ/syntoggle.vim'
+Plug 'iCyMind/NeoSolarized'
+"Plug 'Samuel-Phillips/nvim-colors-solarized'
+"Plug 'altercation/vim-colors-solarized'
+" Navigation
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/nerdtree'
+Plug 'kien/ctrlp.vim'
+Plug 'moll/vim-bbye'
+Plug 'rking/ag.vim'
 " Auto complete
-Plugin 'Valloric/YouCompleteMe'
-
+Plug 'Valloric/YouCompleteMe'
+Plug 'rdnetto/YCM-Generator'
 " ctags
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
-
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
 " cpp
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'rhysd/vim-clang-format'
-
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'rhysd/vim-clang-format'
 " python
-Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'nvie/vim-flake8'
-Plugin 'scrooloose/syntastic'
-Plugin 'davidhalter/jedi'
-
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'nvie/vim-flake8'
+Plug 'scrooloose/syntastic'
+Plug 'davidhalter/jedi'
 " json
-Plugin 'elzr/vim-json'
-
-" ansible (yml)
-Plugin 'pearofducks/ansible-vim'
-
-" Robot
-Plugin 'mfukar/robotframework-vim'
-
-
-call vundle#end()
-" Vundle end
-
-" Filetype
-filetype plugin indent on
-
-" Solarized
-if !has('gui_running')
-    let g:solarized_termcolors=256
-    let g:solarized_contrast="normal"
-endif
+Plug 'elzr/vim-json'
+call plug#end()
 
 " appearance
-colorscheme solarized
 set background=dark
-set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 11
-set number
-set nowrap
+colorscheme NeoSolarized
+"colorscheme solarized
+set termguicolors
+
 set cursorcolumn
 set cursorline
-syntax enable
+set number
+set nowrap
 
 " behaviour
 set splitright
 set splitbelow
-set hlsearch
-
-set wildmenu
-set wildmode=list:longest,full
-set nocompatible
 set showcmd
-
 set hidden
-set noeb vb t_vb=
-set vb t_vb=
-
 set list
-set listchars=tab:\│\ ,trail:· 
+set noerrorbells
 set spelllang=en
+set clipboard=unnamedplus
 
 " Indentation
 set smartindent
@@ -101,26 +66,9 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-set autoindent
-set fileformat=unix
-set expandtab
-set autoindent
-
-" C/C++
-autocmd FileType c,cpp setlocal textwidth=100 colorcolumn=100
 
 " Makefiles
 autocmd FileType make setlocal noexpandtab
-
-" Python
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
 
 " vim-airline
 let g:airline_powerline_fonts = 1
@@ -145,12 +93,12 @@ autocmd CompleteDone * pclose
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 " Tagbar
-let g:tagbar_left = 1
+let g:tagbar_left = 0
 
 " Easytags
 let g:easytags_async = 1
 let g:easytags_syntax_keyword = 'always'
-let g:easytags_auto_highlight = 1
+let g:easytags_auto_highlight = 0
 
 " YCM
 let g:ycm_complete_in_comments = 1
@@ -158,7 +106,7 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_min_num_of_chars_for_completion = 0
 let g:ycm_complete_in_strings = 1
 let g:ycm_path_to_python_interpreter="/usr/bin/python"
 let g:ycm_filetype_blacklist = { 'gitcommit': 1,
@@ -173,7 +121,7 @@ let g:ycm_filetype_blacklist = { 'gitcommit': 1,
                                \ 'infolog':   1,
                                \ 'mail':      1
                                \}
-let g:ycm_show_diagnostics_ui = 0
+let g:ycm_show_diagnostics_ui = 1
 let g:ycm_error_symbol = "✗"
 let g:ycm_warning_symbol = "⚠"
 
@@ -188,13 +136,14 @@ let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:syntastic_cpp_checkers=['cppcheck']
 
-
 " Cpp
 let g:cpp_class_scope_highlight = 1
 
 " clang
 let g:clang_format#command = "clang-format-3.7"
 autocmd FileType c,cpp let g:clang_format#auto_format = 0
+let g:clang_format#code_style = "Google"
+let g:clang_format#style_options = { "Standard" : "C++11", "ColumnLimit" : 0 }
 
 " <C-> move
 nmap <C-k> :bnext<CR>
@@ -221,6 +170,8 @@ nmap <leader>bc :Bdelete<CR>
 nmap <leader>bd :Bdelete!<CR>
 nmap <leader>bn :enew <CR>
 nmap <leader>bl :ls<CR>
+
+nmap <leader>c :YcmForceCompileAndDiagnostics<CR>
 nmap <leader>s  :set spell!<CR>
 nmap <leader>ph :CtrlP ~<CR>
 
