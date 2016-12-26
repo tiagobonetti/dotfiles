@@ -20,7 +20,6 @@ setopt NO_SHARE_HISTORY
 
 # source
 source $ZSH/custom/notify-osd.zsh
-source $ZSH/custom/beyond.zsh
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
