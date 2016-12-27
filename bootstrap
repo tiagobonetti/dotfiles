@@ -24,7 +24,7 @@ echo "Linked: \"$2/$1\" -> \"$1\""
 link .zshrc ~
 
 mkdir -p ~/.config/nvim
-link .vimrc ~/.config/nvim
+link init.vim ~/.config/nvim
 
 mkdir -p ~/.oh-my-zsh/custom
 link notify-osd.zsh ~/.oh-my-zsh/custom
