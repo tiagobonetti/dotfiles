@@ -32,6 +32,15 @@ alias gitk='gitk --max-count=500'
 alias vless='/usr/share/vim/vim*/macros/less.sh'
 lgrep () { grep --color=always $* | less -R  }
 
-#RTV
-export RTV_EDITOR=vim
+alias one-ssh='sshpass -p be ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o User=root'
+alias one-scp='sshpass -p be scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o User=root'
 
+
+alias git='nocorrect git'
+alias vim='nocorrect vim'
+alias ssh='nocorrect ssh'
+alias sshpass='nocorrect sshpass'
+
+if [[ $TERMINIX_ID ]]; then
+        source /etc/profile.d/vte.sh
+fi

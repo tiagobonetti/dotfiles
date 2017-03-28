@@ -1,29 +1,21 @@
 call plug#begin('~/.config/nvim/plugged')
 " small functions
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-obsession'
-Plug 'tpope/vim-unimpaired'
-Plug 'tomtom/tcomment_vim'
-Plug 'arecarn/crunch.vim'
-Plug 'godlygeek/tabular'
+Plug 'tpope/vim-abolish'     "Better substitute :%S//
+Plug 'tpope/vim-fugitive'    "Git wrapper :Gsplit
+Plug 'tpope/vim-surround'    "Change surrounds <l>cs{(
 " Visuals
 Plug 'bling/vim-airline'
 Plug 'airblade/vim-gitgutter'
-Plug 'BoltsJ/syntoggle.vim'
 Plug 'iCyMind/NeoSolarized'
-"Plug 'Samuel-Phillips/nvim-colors-solarized'
-"Plug 'altercation/vim-colors-solarized'
 " Navigation
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'    "BUGBUGBUGBUG
 Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
 Plug 'moll/vim-bbye'
 Plug 'rking/ag.vim'
 " Auto complete
 Plug 'Valloric/YouCompleteMe'
-Plug 'rdnetto/YCM-Generator'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 " ctags
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
@@ -42,8 +34,6 @@ call plug#end()
 " appearance
 set background=dark
 colorscheme NeoSolarized
-"colorscheme solarized
-set termguicolors
 
 set cursorcolumn
 set cursorline
@@ -76,9 +66,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_tabs = 0
 let g:airline#extensions#tabline#fnamemod = ':t'
 
-" syntoggle
-let g:syntoggle_syn_on = 1
-
 " Ctrl+P
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -91,9 +78,6 @@ autocmd CompleteDone * pclose
 
 " NerdTree
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-
-" Tagbar
-let g:tagbar_left = 0
 
 " Easytags
 let g:easytags_async = 1
@@ -108,7 +92,10 @@ let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_min_num_of_chars_for_completion = 0
 let g:ycm_complete_in_strings = 1
-let g:ycm_path_to_python_interpreter="/usr/bin/python"
+let g:ycm_path_to_python_interpreter="python"
+let g:ycm_show_diagnostics_ui = 1
+let g:ycm_error_symbol = "✗"
+let g:ycm_warning_symbol = "⚠"
 let g:ycm_filetype_blacklist = { 'gitcommit': 1,
                                \ 'tagbar':    1,
                                \ 'qf':        1,
@@ -121,9 +108,6 @@ let g:ycm_filetype_blacklist = { 'gitcommit': 1,
                                \ 'infolog':   1,
                                \ 'mail':      1
                                \}
-let g:ycm_show_diagnostics_ui = 1
-let g:ycm_error_symbol = "✗"
-let g:ycm_warning_symbol = "⚠"
 
 " syntastic
 let g:syntastic_mode_map = { 'mode': 'passive',
@@ -141,20 +125,17 @@ let g:cpp_class_scope_highlight = 1
 
 " clang
 let g:clang_format#command = "clang-format-3.7"
-autocmd FileType c,cpp let g:clang_format#auto_format = 0
 let g:clang_format#code_style = "Google"
 let g:clang_format#style_options = { "Standard" : "C++11", "ColumnLimit" : 0 }
+autocmd FileType c,cpp let g:clang_format#auto_format = 0
 
-" <C-> move
+"" <C-> move
 nmap <C-k> :bnext<CR>
 nmap <C-j> :bprev<CR>
 nmap <C-l> :wincmd w<CR>
 nmap <C-h> :wincmd p<CR>
-" <C-> files
-nmap <C-b> :CtrlPBuffer<CR>
-nmap <C-n> :CtrlPMRU<CR>
-nmap <C-m> :CtrlPMixed<CR>
-" <C-> files
+
+" <C-> Plugins
 nmap <C-f> :ClangFormat<CR>
 nmap <C-t> :TagbarToggle<CR>
 nmap <C-g> :GitGutterToggle<CR>
@@ -164,12 +145,9 @@ nmap <C-x> :SyntaxToggle<CR>
 " <leader>
 let mapleader = " "
 " buffers
-nmap <leader>bk :bnext<CR>
-nmap <leader>bj :bprev<CR>
 nmap <leader>bc :Bdelete<CR>
 nmap <leader>bd :Bdelete!<CR>
 nmap <leader>bn :enew <CR>
-nmap <leader>bl :ls<CR>
 
 nmap <leader>c :YcmForceCompileAndDiagnostics<CR>
 nmap <leader>s  :set spell!<CR>
@@ -183,7 +161,6 @@ nmap <leader>wbs :bufdo! %s/<C-r><C-w>/
 nmap <leader>wbS :bufdo! %S/<C-r><C-w>/
 nmap <leader>wag :Ag <C-r><C-w><cr>
 
-nmap <leader>/ :nohlsearch<CR>
 nmap <leader>vimrc :e $MYVIMRC<cr>
 nmap <leader>vims :source $MYVIMRC<cr>
 
