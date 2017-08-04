@@ -14,6 +14,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'moll/vim-bbye'
 Plug 'rking/ag.vim'
 " Auto complete
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Valloric/YouCompleteMe'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 " ctags
@@ -25,10 +26,13 @@ Plug 'rhysd/vim-clang-format'
 " python
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'nvie/vim-flake8'
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 Plug 'davidhalter/jedi'
 " json
 Plug 'elzr/vim-json'
+Plug 'tpope/vim-jdaddy'
+" linux kernel
+Plug 'vivien/vim-linux-coding-style'
 call plug#end()
 
 " appearance
@@ -128,6 +132,10 @@ let g:clang_format#command = "clang-format-3.7"
 let g:clang_format#code_style = "Google"
 let g:clang_format#style_options = { "Standard" : "C++11", "ColumnLimit" : 0 }
 autocmd FileType c,cpp let g:clang_format#auto_format = 0
+
+" Kernel
+let g:linuxsty_patterns = [ '/home/tiagobonetti/beyond/gluon/beyondfeed/kernel/' ]
+nmap <leader>kf :LinuxCodingStyle<CR>
 
 "" <C-> move
 nmap <C-k> :bnext<CR>

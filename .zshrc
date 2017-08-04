@@ -14,6 +14,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 plugins=(git colored-man colorize cp python gnu-utils zsh-syntax-highlighting ubuntu ag )
+plugins+=(zsh-nvm)
 
 # User configuration
 setopt NO_SHARE_HISTORY
@@ -40,7 +41,3 @@ alias git='nocorrect git'
 alias vim='nocorrect vim'
 alias ssh='nocorrect ssh'
 alias sshpass='nocorrect sshpass'
-
-if [[ $TERMINIX_ID ]]; then
-        source /etc/profile.d/vte.sh
-fi
