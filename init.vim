@@ -134,7 +134,8 @@ let g:clang_format#style_options = { "Standard" : "C++11", "ColumnLimit" : 0 }
 autocmd FileType c,cpp let g:clang_format#auto_format = 0
 
 " Kernel
-let g:linuxsty_patterns = [ '/home/tiagobonetti/beyond/gluon/beyondfeed/kernel/' ]
+let g:linuxsty_patterns = [ '/home/tiagobonetti/beyond/gluon/beyondfeed/kernel/',
+                          \ '/home/tiagobonetti/beyond/gluon/openwrt/build_dir/target-.*/linux-.*/']
 nmap <leader>kf :LinuxCodingStyle<CR>
 
 "" <C-> move
