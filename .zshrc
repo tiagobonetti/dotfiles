@@ -41,3 +41,7 @@ alias git='nocorrect git'
 alias vim='nocorrect vim'
 alias ssh='nocorrect ssh'
 alias sshpass='nocorrect sshpass'
+
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
