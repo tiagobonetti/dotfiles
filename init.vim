@@ -127,11 +127,14 @@ let g:syntastic_cpp_checkers=['cppcheck']
 " Cpp
 let g:cpp_class_scope_highlight = 1
 
-" clang
-let g:clang_format#command = "clang-format-3.7"
+" clang format
+let g:clang_format#command = "clang-format-5.0"
+let g:clang_format#detect_style_file = 1
+" this will be used as a fallback
+let g:clang_format#enable_fallback_style = 1
 let g:clang_format#code_style = "Google"
 let g:clang_format#style_options = { "Standard" : "C++11", "ColumnLimit" : 0 }
-autocmd FileType c,cpp let g:clang_format#auto_format = 0
+"autocmd FileType c,cpp let g:clang_format#auto_format = 1
 
 " Kernel
 let g:linuxsty_patterns = [ '/home/tiagobonetti/beyond/gluon/beyondfeed/kernel/',
@@ -164,14 +167,17 @@ nmap <leader>ph :CtrlP ~<CR>
 
 " current word commands
 nmap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nmap <leader>ws :%s/<C-r><C-w>/
-nmap <leader>wS :%S/<C-r><C-w>/
-nmap <leader>wbs :bufdo! %s/<C-r><C-w>/
-nmap <leader>wbS :bufdo! %S/<C-r><C-w>/
+nmap <leader>ws :%s/\<<C-r><C-w>\>/
+nmap <leader>wS :%S/\<<C-r><C-w>\>/
+nmap <leader>wbs :bufdo! %s/\<<C-r><C-w>\>/
+nmap <leader>wbS :bufdo! %S/\<<C-r><C-w>\>/
 nmap <leader>wag :Ag <C-r><C-w><cr>
 
 nmap <leader>vimrc :e $MYVIMRC<cr>
 nmap <leader>vims :source $MYVIMRC<cr>
+
+" exit terminal with ESC
+tnoremap <Esc> <C-\><C-n>
 
 " Navigating
 inoremap  <Up>     <NOP>
