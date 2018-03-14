@@ -1,6 +1,13 @@
 # commands to ignore
 cmdignore=(htop tmux top vim nvim)
 
+# get command name and start the timer
+function notifyosd-preexec() {
+    cmd=$1
+    cmd_basename=${${cmd:s/sudo //}[(ws: :)1]}
+    cmd_start=`date +%s`
+}
+
 # end and compare timer, notify-send if needed
 function notifyosd-precmd() {
     #store return value
@@ -50,15 +57,7 @@ function notifyosd-precmd() {
     unset cmd_start
 }
 
-# make sure this plays nicely with any existing precmd
-precmd_functions+=( notifyosd-precmd )
-
-# get command name and start the timer
-function notifyosd-preexec() {
-    cmd=$1
-    cmd_basename=${${cmd:s/sudo //}[(ws: :)1]}
-    cmd_start=`date +%s`
-}
-
 # make sure this plays nicely with any existing preexec
 preexec_functions+=( notifyosd-preexec )
+# make sure this plays nicely with any existing precmd
+precmd_functions+=( notifyosd-precmd )

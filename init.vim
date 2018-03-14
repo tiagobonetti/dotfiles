@@ -33,6 +33,8 @@ Plug 'elzr/vim-json'
 Plug 'tpope/vim-jdaddy'
 " linux kernel
 Plug 'vivien/vim-linux-coding-style'
+" Kotlin
+Plug 'udalov/kotlin-vim'
 call plug#end()
 
 " appearance
