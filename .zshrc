@@ -17,6 +17,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 plugins=(git colored-man colorize cp python gnu-utils zsh-syntax-highlighting ubuntu ag)
+#plugins+=(zsh-nvm)
 # slow modules: zsh-nvm
 
 # User configuration
@@ -44,6 +45,25 @@ alias sshpass='nocorrect sshpass'
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
+
+loadplugins () {
+    plugin=$1 
+
+    if is_plugin $ZSH_CUSTOM $plugin
+    then
+            fpath=($ZSH_CUSTOM/plugins/$plugin $fpath) 
+    elif is_plugin $ZSH $plugin
+    then
+            fpath=($ZSH/plugins/$plugin $fpath) 
+    fi
+    if [ -f $ZSH_CUSTOM/plugins/$plugin/$plugin.plugin.zsh ]
+    then
+            source $ZSH_CUSTOM/plugins/$plugin/$plugin.plugin.zsh
+    elif [ -f $ZSH/plugins/$plugin/$plugin.plugin.zsh ]
+    then
+            source $ZSH/plugins/$plugin/$plugin.plugin.zsh
+    fi
+}
 
 # profiling post
 #zprof
