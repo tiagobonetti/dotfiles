@@ -1,5 +1,5 @@
 --- /home/tbonetti/.zshrc.backup	2018-11-06 11:07:55.762543739 +0100
-+++ ../.zshrc	2018-11-06 21:38:21.171488878 +0100
++++ /home/tbonetti/dotfiles/patches/../.zshrc	2018-11-07 10:27:22.186289737 +0100
 @@ -1,14 +1,19 @@
 +# Profiling pre
 +# zmodload zsh/zprof
@@ -31,7 +31,7 @@
  
  # Uncomment the following line to disable bi-weekly auto-update checks.
  # DISABLE_AUTO_UPDATE="true"
-@@ -36,15 +41,15 @@
+@@ -36,10 +41,10 @@
  # DISABLE_AUTO_TITLE="true"
  
  # Uncomment the following line to enable command auto-correction.
@@ -44,12 +44,6 @@
  
  # Uncomment the following line if you want to disable marking untracked files
  # under VCS as dirty. This makes repository status check for large repositories
- # much, much faster.
--# DISABLE_UNTRACKED_FILES_DIRTY="true"
-+DISABLE_UNTRACKED_FILES_DIRTY="true"
- 
- # Uncomment the following line if you want to change the command execution time
- # stamp shown in the history command output.
 @@ -52,10 +57,10 @@
  # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
  # or set a custom format using the strftime function format specifications,
