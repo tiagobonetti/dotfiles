@@ -1,6 +1,9 @@
 # Woraround for VTE based terminals (Tilix)
-VTE_SH=/etc/profile.d/vte.sh
-if [[ ($TILIX_ID || $VTE_VERSION) && -f $VTE_SH ]]; then
-    source $VTE_SH
+if [[ $TILIX_ID || $VTE_VERSION ]]; then
+    vte_glob=(/etc/profile.d/vte*.sh(N)) # zsh: (N) use nullglob
+    vte_sh=${vte_glob[-1]}
+    if [[ -f $vte_sh ]]; then
+        source $vte_sh
+    fi
 fi
 

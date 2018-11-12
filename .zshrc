@@ -70,6 +70,7 @@ ZSH_CUSTOM=$HOME/dotfiles/zsh-custom
 plugins=(
   git
   colored-man-pages
+  conda
 )
 
 source $ZSH/oh-my-zsh.sh

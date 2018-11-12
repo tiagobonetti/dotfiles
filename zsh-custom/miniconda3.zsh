@@ -1,5 +1,5 @@
-MINICONDA3_PATH="$HOME/miniconda3/bin"
-if [ -d $MINICONDA3_PATH ]; then
-  export PATH="$MINICONDA3_PATH:$PATH"
+CONDA_SH=$HOME/miniconda3/etc/profile.d/conda.sh
+if [ -f $CONDA_SH ]; then
+  . $CONDA_SH
 fi
 

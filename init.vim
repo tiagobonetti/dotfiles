@@ -8,15 +8,12 @@ Plug 'bling/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'iCyMind/NeoSolarized'
 " Navigation
-"Plug 'majutsushi/tagbar'    "BUGBUGBUGBUG
 Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
 Plug 'moll/vim-bbye'
 Plug 'rking/ag.vim'
 " Auto complete
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Valloric/YouCompleteMe'
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 " ctags
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
@@ -26,15 +23,8 @@ Plug 'rhysd/vim-clang-format'
 " python
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'nvie/vim-flake8'
-"Plug 'scrooloose/syntastic'
 Plug 'davidhalter/jedi'
-" json
-Plug 'elzr/vim-json'
-Plug 'tpope/vim-jdaddy'
-" linux kernel
-Plug 'vivien/vim-linux-coding-style'
-" Kotlin
-Plug 'udalov/kotlin-vim'
+"Plug 'scrooloose/syntastic'
 call plug#end()
 
 " appearance
@@ -91,6 +81,7 @@ let g:easytags_syntax_keyword = 'always'
 let g:easytags_auto_highlight = 0
 
 " YCM
+let g:ycm_global_ycm_extra_conf = "/home/tbonetti/.config/nvim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 let g:ycm_complete_in_comments = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
@@ -123,25 +114,15 @@ let g:syntastic_mode_map = { 'mode': 'passive',
 let g:syntastic_python_python_exec = '/path/to/python3'
 let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+let g:syntastic_cpp_compiler_options = ' -std=c++17 -stdlib=libstdc++'
 let g:syntastic_cpp_checkers=['cppcheck']
 
 " Cpp
 let g:cpp_class_scope_highlight = 1
 
 " clang format
-let g:clang_format#command = "clang-format-5.0"
+let g:clang_format#command = "clang-format"
 let g:clang_format#detect_style_file = 1
-" this will be used as a fallback
-let g:clang_format#enable_fallback_style = 1
-let g:clang_format#code_style = "Google"
-let g:clang_format#style_options = { "Standard" : "C++11", "ColumnLimit" : 0 }
-"autocmd FileType c,cpp let g:clang_format#auto_format = 1
-
-" Kernel
-let g:linuxsty_patterns = [ '/home/tiagobonetti/beyond/gluon/beyondfeed/kernel/',
-                          \ '/home/tiagobonetti/beyond/gluon/openwrt/build_dir/target-.*/linux-.*/']
-nmap <leader>kf :LinuxCodingStyle<CR>
 
 "" <C-> move
 nmap <C-k> :bnext<CR>
@@ -165,7 +146,6 @@ nmap <leader>bn :enew <CR>
 
 nmap <leader>c :YcmForceCompileAndDiagnostics<CR>
 nmap <leader>s  :set spell!<CR>
-nmap <leader>ph :CtrlP ~<CR>
 
 " current word commands
 nmap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>

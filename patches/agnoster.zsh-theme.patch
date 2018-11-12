@@ -1,5 +1,5 @@
 --- /home/tbonetti/.oh-my-zsh/themes/agnoster.zsh-theme	2018-11-06 11:07:55.750543610 +0100
-+++ /home/tbonetti/dotfiles/patches/../zsh-custom/agnoster-custom.zsh-theme	2018-11-06 21:20:31.239698290 +0100
++++ /home/tbonetti/dotfiles/patches/../zsh-custom/themes/agnoster-custom.zsh-theme	2018-11-06 21:20:31.239698290 +0100
 @@ -224,6 +224,10 @@
    [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
  }
