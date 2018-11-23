@@ -18,6 +18,7 @@ pkgs=(
     htop
     clang
     clang-format
+    graphviz
 )
 set -e
 sudo apt update
