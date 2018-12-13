@@ -4,6 +4,7 @@ pkgs=(
     ccache
     clang
     clang-format
+    clang-tidy
     cmake
     curl
     exuberant-ctags

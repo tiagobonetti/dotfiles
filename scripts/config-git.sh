@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 git config --global user.email "tiago.bonetti@gmail.com"
 git config --global user.name "Tiago Bonetti"
+git config --global core.editor nvim
 git config --global diff.tool vimdiff
 git config --global difftool.vimdiff.path nvim
 git config --global merge.tool vimdiff
