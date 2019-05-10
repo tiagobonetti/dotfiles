@@ -8,6 +8,7 @@ pkgs=(
     cmake
     curl
     exuberant-ctags
+    fd-find
     git-gui
     git-lfs
     gitk
