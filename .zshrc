@@ -71,6 +71,7 @@ plugins=(
   git
   colored-man-pages
   conda
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
