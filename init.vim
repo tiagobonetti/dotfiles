@@ -9,10 +9,11 @@ Plug 'bling/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'iCyMind/NeoSolarized'
 " Navigation
-Plug 'scrooloose/nerdtree'
-Plug 'kien/ctrlp.vim'
 Plug 'moll/vim-bbye'
-Plug 'rking/ag.vim'
+" Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf' " replaces: 'kien/ctrlp.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'jremmen/vim-ripgrep' " replaces: 'rking/ag.vim'
 " Auto complete
 Plug 'Valloric/YouCompleteMe'
 " ctags
@@ -25,6 +26,8 @@ Plug 'rhysd/vim-clang-format'
 Plug 'nvie/vim-flake8'
 "Plug 'davidhalter/jedi'
 "Plug 'scrooloose/syntastic'
+" QML
+Plug 'peterhoeg/vim-qml'
 call plug#end()
 
 " appearance
@@ -46,14 +49,14 @@ set noerrorbells
 set spelllang=en
 set clipboard=unnamedplus
 
-" Indentation
+" indentation
 set smartindent
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
 
-" Makefiles
+" makefiles
 autocmd FileType make setlocal noexpandtab
 
 " vim-airline
@@ -61,19 +64,6 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_tabs = 0
 let g:airline#extensions#tabline#fnamemod = ':t'
-
-" Ctrl+P
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = { 'dir':  '\v[\/]\.(git|hg|svn|__pycache__)$',
-                            \ 'file': '\v\.(exe|so|dll|pyc)$',
-                            \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
-                            \ }
-autocmd CompleteDone * pclose
-
-" NerdTree
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 " Easytags
 let g:easytags_async = 1
@@ -119,7 +109,6 @@ let g:ycm_filetype_blacklist = { 'gitcommit': 1,
 
 " Cpp
 let g:cpp_class_scope_highlight = 1
-
 " clang format
 let g:clang_format#command           = "clang-format"
 let g:clang_format#detect_style_file = 1
@@ -132,36 +121,40 @@ nmap <C-h> :wincmd p<CR>
 
 " <C-> Plugins
 nmap <C-f> :ClangFormat<CR>
-nmap <C-t> :TagbarToggle<CR>
-nmap <C-g> :GitGutterToggle<CR>
 nmap <C-s> :SyntasticToggleMode<CR>
 nmap <C-x> :SyntaxToggle<CR>
 
 " <leader>
 let mapleader = " "
+" spelling
+nmap <leader>s :set spell!<CR>
 " buffers
 nmap <leader>bc :Bdelete<CR>
 nmap <leader>bd :Bdelete!<CR>
 nmap <leader>bn :enew <CR>
-
-nmap <leader>c :YcmForceCompileAndDiagnostics<CR>
-nmap <leader>s  :set spell!<CR>
-
+nmap <leader>bf :Buffers<CR>
+" fzf
+nmap <leader>f :Files<CR>
+nmap <leader>h :Files ~<CR>
+nmap <leader>g :GFiles<CR>
 " current word commands
-nmap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nmap <leader>wg :FZFripgrep <C-r><C-w><CR>
 nmap <leader>ws :%s/\<<C-r><C-w>\>/
 nmap <leader>wS :%S/\<<C-r><C-w>\>/
-nmap <leader>wbs :bufdo! %s/\<<C-r><C-w>\>/
-nmap <leader>wbS :bufdo! %S/\<<C-r><C-w>\>/
-nmap <leader>wag :Ag <C-r><C-w><cr>
-
-nmap <leader>vimrc :e $MYVIMRC<cr>
-nmap <leader>vims :source $MYVIMRC<cr>
+" buffers + current word commands
+nmap <leader>bws :bufdo! %s/\<<C-r><C-w>\>/
+nmap <leader>bwS :bufdo! %S/\<<C-r><C-w>\>/
+" access and load vimrc
+nmap <leader>vr :e $MYVIMRC<cr>
+nmap <leader>vs :source $MYVIMRC<cr>
+" ycm
+nmap <leader>yc :YcmForceCompileAndDiagnostics<CR>
+nmap <leader>yg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " exit terminal with ESC
 tnoremap <Esc> <C-\><C-n>
 
-" Navigating
+" no navigating
 inoremap  <Up>     <NOP>
 inoremap  <Down>   <NOP>
 inoremap  <Left>   <NOP>
@@ -170,4 +163,14 @@ noremap   <Up>     <NOP>
 noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
+
+" commands with FZF
+" ripgrep command with preview
+command! -bang -nargs=* FZFripgrep
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview('right:50%', '?'), <bang>0)
+" add preview to Files
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:50%', '?'), <bang>0)
 

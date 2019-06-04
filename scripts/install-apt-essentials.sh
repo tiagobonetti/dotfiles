@@ -9,6 +9,7 @@ pkgs=(
     curl
     exuberant-ctags
     fd-find
+    fzf
     git-gui
     git-lfs
     gitk
