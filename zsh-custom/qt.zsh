@@ -4,3 +4,8 @@ if [ -d $QT_BIN ]; then
     export CMAKE_PREFIX_PATH="$QT_LIB:$CMAKE_PREFIX_PATH"
     export PATH="$QT_BIN:$PATH"
 fi
+
+QMLFMT=$HOME/qmlfmt/build/qmlfmt
+if [ -x $QMLFMT ]; then
+    alias qmlfmt="$QMLFMT"
+fi
