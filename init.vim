@@ -8,8 +8,10 @@ Plug 'tpope/vim-commentary'  "Change surrounds <l>cs{(
 Plug 'bling/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'iCyMind/NeoSolarized'
+Plug 'RRethy/vim-illuminate'
 " Navigation
 Plug 'moll/vim-bbye'
+Plug 'justinmk/vim-dirvish'
 " Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf' " replaces: 'kien/ctrlp.vim'
 Plug 'junegunn/fzf.vim'
@@ -62,8 +64,8 @@ autocmd FileType make setlocal noexpandtab
 " vim-airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_tabs = 0
-let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " Easytags
 let g:easytags_async = 1
@@ -138,7 +140,7 @@ nmap <leader>f :Files<CR>
 nmap <leader>h :Files ~<CR>
 nmap <leader>g :GFiles<CR>
 " current word commands
-nmap <leader>wg :FZFripgrep <C-r><C-w><CR>
+nmap <leader>wg :Grep <C-r><C-w><CR>
 nmap <leader>ws :%s/\<<C-r><C-w>\>/
 nmap <leader>wS :%S/\<<C-r><C-w>\>/
 " buffers + current word commands
@@ -166,11 +168,10 @@ noremap   <Right>  <NOP>
 
 " commands with FZF
 " ripgrep command with preview
-command! -bang -nargs=* FZFripgrep
+command! -bang -nargs=* Grep
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview('right:50%', '?'), <bang>0)
 " add preview to Files
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:50%', '?'), <bang>0)
-
