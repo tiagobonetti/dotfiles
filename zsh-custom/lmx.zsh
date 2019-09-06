@@ -8,3 +8,10 @@ walrus-scene() {
     WALRUS=($HOME/.conan/data/walrus-qml/*/lumicks/stable/package/*/qml/([-1]))
     qmlscene -I "$WALRUS" "$@"
 }
+
+lmx-iwyu() {
+    IWYU_DIR=$HOME/lmx/third-party/iwyu
+    IWYU_TOOL=$IWYU_DIR/include-what-you-use/iwyu_tool.py
+    IWYU_BIN=$IWYU_DIR/build/bin
+    IWYU_BINARY=$IWYU_BIN/include-what-you-use $IWYU_TOOL "$@"
+}
