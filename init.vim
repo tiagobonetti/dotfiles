@@ -115,56 +115,59 @@ let g:cpp_class_scope_highlight = 1
 let g:clang_format#command           = "clang-format"
 let g:clang_format#detect_style_file = 1
 
-"" <C-> move
-nmap <C-k> :bnext<CR>
-nmap <C-j> :bprev<CR>
-nmap <C-l> :wincmd w<CR>
-nmap <C-h> :wincmd p<CR>
+"" <c-> move
+nmap <c-k> :bnext<cr>
+nmap <c-j> :bprev<cr>
+nmap <c-l> :wincmd w<cr>
+nmap <c-h> :wincmd p<cr>
 
-" <C-> Plugins
-nmap <C-f> :ClangFormat<CR>
-nmap <C-s> :SyntasticToggleMode<CR>
-nmap <C-x> :SyntaxToggle<CR>
+" <c-> Plugins
+nmap <c-f> :ClangFormat<cr>
+nmap <c-s> :SyntasticToggleMode<cr>
+nmap <c-x> :SyntaxToggle<cr>
 
 " <leader>
 let mapleader = " "
 " spelling
-nmap <leader>s :set spell!<CR>
+nmap <leader>s :set spell!<cr>
 " buffers
-nmap <leader>bc :Bdelete<CR>
-nmap <leader>bd :Bdelete!<CR>
-nmap <leader>bn :enew <CR>
-nmap <leader>bf :Buffers<CR>
+nmap <leader>bc :Bdelete<cr>
+nmap <leader>bd :Bdelete!<cr>
+nmap <leader>bn :enew <cr>
+nmap <leader>bf :Buffers<cr>
 " fzf
-nmap <leader>f :Files<CR>
-nmap <leader>h :Files ~<CR>
-nmap <leader>g :GFiles<CR>
+nmap <leader>f  :Files<cr>
+nmap <leader>ff :Files<cr>
+nmap <leader>fg :GFiles<cr>
+nmap <leader>fh :Files ~<cr>
+nmap <leader>fw :Files ~/lmx/ws<cr>
+nmap <leader>/  :Grep 
 " current word commands
-nmap <leader>wg :Grep <C-r><C-w><CR>
-nmap <leader>ws :%s/\<<C-r><C-w>\>/
-nmap <leader>wS :%S/\<<C-r><C-w>\>/
+nmap <leader>wg :Grep <c-r><c-w><cr>
+nmap <leader>ws :%s/\<<c-r><c-w>\>/
+nmap <leader>wS :%S/\<<c-r><c-w>\>/
 " buffers + current word commands
-nmap <leader>bws :bufdo! %s/\<<C-r><C-w>\>/
-nmap <leader>bwS :bufdo! %S/\<<C-r><C-w>\>/
+nmap <leader>bws :bufdo! %s/\<<c-r><c-w>\>/
+nmap <leader>bwS :bufdo! %S/\<<c-r><c-w>\>/
 " access and load vimrc
 nmap <leader>vr :e $MYVIMRC<cr>
 nmap <leader>vs :source $MYVIMRC<cr>
 " ycm
-nmap <leader>yc :YcmForceCompileAndDiagnostics<CR>
-nmap <leader>yg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nmap <leader>yc :YcmForceCompileAndDiagnostics<cr>
+nmap <leader>yg :YcmCompleter GoToDefinitionElseDeclaration<cr>
 
 " exit terminal with ESC
-tnoremap <Esc> <C-\><C-n>
+tnoremap <esc> <c-\><c-n>
 
 " no navigating
-inoremap  <Up>     <NOP>
-inoremap  <Down>   <NOP>
-inoremap  <Left>   <NOP>
-inoremap  <Right>  <NOP>
-noremap   <Up>     <NOP>
-noremap   <Down>   <NOP>
-noremap   <Left>   <NOP>
-noremap   <Right>  <NOP>
+inoremap <Up>    <nop>
+inoremap <Down>  <nop>
+inoremap <Left>  <nop>
+inoremap <Right> <nop>
+noremap  <Up>    <nop>
+noremap  <Down>  <nop>
+noremap  <Left>  <nop>
+noremap  <Right> <nop>
 
 " commands with FZF
 " ripgrep command with preview
