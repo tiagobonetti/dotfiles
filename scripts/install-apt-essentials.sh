@@ -23,6 +23,7 @@ pkgs=(
     python3-pip
     silversearcher-ag
     ripgrep
+    tilix
     tree
     zsh
 )
