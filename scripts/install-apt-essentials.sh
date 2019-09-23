@@ -15,6 +15,7 @@ pkgs=(
     gitk
     graphviz
     htop
+    libgl1-mesa-dev # for building qt applications
     neovim
     ninja-build
     python-dev
