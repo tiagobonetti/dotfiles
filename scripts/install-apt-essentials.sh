@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 pkgs=(
+    baobab # disk usage analyzer
     build-essential
     ccache
     clang
@@ -13,8 +14,10 @@ pkgs=(
     git-gui
     git-lfs
     gitk
+    gnome-tweaks
     graphviz
     htop
+    isc-dhcp-server
     libgl1-mesa-dev # for building qt applications
     lld
     neovim
@@ -23,8 +26,8 @@ pkgs=(
     python-pip
     python3-dev
     python3-pip
-    silversearcher-ag
     ripgrep
+    silversearcher-ag
     tilix
     tree
     zsh
