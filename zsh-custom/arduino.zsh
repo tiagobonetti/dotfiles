@@ -1,4 +1,4 @@
-arduino_sdk=$(echo $HOME/arduino-<->.<->.<->([-1]))
+arduino_sdk=$(echo $HOME/arduino-<->.<->.<->([-1])(N))
 if [ -d $arduino_sdk ]; then
     export ARDUINO_SDK_PATH="$arduino_sdk"
 
