@@ -10,6 +10,7 @@ pkgs=(
     curl
     exuberant-ctags
     fd-find
+    fonts-noto-color-emoji
     fzf
     git-gui
     git-lfs
@@ -17,6 +18,7 @@ pkgs=(
     gnome-tweaks
     graphviz
     htop
+    intelmkl # for building some applications
     isc-dhcp-server
     libgl1-mesa-dev # for building qt applications
     lld
