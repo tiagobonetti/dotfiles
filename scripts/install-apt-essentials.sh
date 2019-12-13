@@ -9,9 +9,9 @@ pkgs=(
     cmake
     curl
     exuberant-ctags
-    fd-find
-    fonts-noto-color-emoji
-    fzf
+    #fd-find
+    #fonts-noto-color-emoji
+    #fzf
     git-gui
     git-lfs
     gitk
@@ -28,7 +28,7 @@ pkgs=(
     python-pip
     python3-dev
     python3-pip
-    ripgrep
+    #ripgrep
     silversearcher-ag
     tilix
     tree
