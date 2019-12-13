@@ -1,0 +1,36 @@
+set number
+
+" use system clipboard"
+set clipboard=unnamedplus,unnamed,ideaput
+
+set visualbell
+set noerrorbells
+
+" enable plugins
+set surround
+set commentary
+set multiple-cursors
+
+" <leader>
+let mapleader = " "
+
+nmap <leader>s  :shell<cr>
+
+nmap <leader>vs :source ~/.ideavimrc<cr>
+
+nmap <leader>f  :action ReformatCode<cr>
+
+" current word commands
+" nmap <leader>ws :%s/\<<c-r><c-w>\>/
+nmap <leader>ws :%s/\<<c-r><c-w>\>/
+
+" navigate tabs
+nmap <leader>j :action PreviousTab<cr>
+nmap <leader>k :action NextTab<cr>
+
+" use increment/decrement using leader
+nmap <leader>a <c-a>
+nmap <leader>x <c-x>
+
+" code navigation
+map <Leader>b :action GotoDeclaration<CR>

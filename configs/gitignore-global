@@ -1,0 +1,12 @@
+# Swap files
+*~
+*swp
+
+# IDEs
+.vs/
+.vscode/
+.idea/
+
+# Python
+*.pyc
+__pycache__/
