@@ -18,7 +18,7 @@ pkgs=(
     gnome-tweaks
     graphviz
     htop
-    intelmkl # for building some applications
+    #intelmkl # for building some applications
     isc-dhcp-server
     libgl1-mesa-dev # for building qt applications
     lld
