@@ -2,6 +2,9 @@
 alias l='ls -gAFGh'
 alias gitk='gitk --max-count=500'
 
+# There can be only 3
+alias python='python3'
+
 # avoid unecesary corrections (usually to paths) on this commands
 alias git='nocorrect git'
 alias vim='nocorrect vim'
