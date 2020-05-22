@@ -9,6 +9,7 @@ Plug 'bling/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'iCyMind/NeoSolarized'
 Plug 'RRethy/vim-illuminate'
+Plug 'luochen1990/rainbow'
 " Navigation
 Plug 'moll/vim-bbye'
 Plug 'justinmk/vim-dirvish'
@@ -69,6 +70,9 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline#extensions#tabline#buffer_nr_show = 1
+
+" Rainbow braces
+let g:rainbow_active = 1
 
 " Easytags
 let g:easytags_async = 1
