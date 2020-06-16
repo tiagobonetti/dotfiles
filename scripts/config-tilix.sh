@@ -6,3 +6,6 @@ if [ "$1" == "--save" ]; then
 else
     dconf load /com/gexperts/Tilix/ < $CFG
 fi
+
+echo "Select your preferred terminal application"
+sudo update-alternatives --config x-terminal-emulator
