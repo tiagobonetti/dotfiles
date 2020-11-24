@@ -1,5 +1,7 @@
 call plug#begin('~/.config/nvim/plugged')
 " small functions
+Plug 'tpope/vim-sensible'    "Defaults
+Plug 'tpope/vim-abolish'     "Better substitute :%S//
 Plug 'tpope/vim-abolish'     "Better substitute :%S//
 Plug 'tpope/vim-fugitive'    "Git wrapper :Gsplit
 Plug 'tpope/vim-surround'    "Change surrounds <l>cs{(
@@ -13,22 +15,19 @@ Plug 'luochen1990/rainbow'
 " Navigation
 Plug 'moll/vim-bbye'
 Plug 'justinmk/vim-dirvish'
-" Plug 'scrooloose/nerdtree'
-Plug 'junegunn/fzf' " replaces: 'kien/ctrlp.vim'
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'jremmen/vim-ripgrep' " replaces: 'rking/ag.vim'
-" Auto complete
-Plug 'Valloric/YouCompleteMe'
-" ctags
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-easytags'
-" cpp
+Plug 'jremmen/vim-ripgrep'
+" Lnaguage Server Protocol support
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+" Completion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'lighttiger2505/deoplete-vim-lsp'
+" C++
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rhysd/vim-clang-format'
-" python
-Plug 'nvie/vim-flake8'
-"Plug 'davidhalter/jedi'
-"Plug 'scrooloose/syntastic'
 " QML
 Plug 'peterhoeg/vim-qml'
 call plug#end()
@@ -74,49 +73,11 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " Rainbow braces
 let g:rainbow_active = 1
 
-" Easytags
-let g:easytags_async = 1
-let g:easytags_syntax_keyword = 'always'
-let g:easytags_auto_highlight = 0
+" disable lsp
+let g:lsp_diagnostics_enabled = 0
 
-" YCM
-let g:ycm_global_ycm_extra_conf = "/home/tbonetti/.config/nvim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
-let g:ycm_complete_in_comments  = 1
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_min_num_of_chars_for_completion = 0
-let g:ycm_complete_in_strings = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_path_to_python_interpreter="python"
-let g:ycm_show_diagnostics_ui = 1
-let g:ycm_error_symbol = "✗"
-let g:ycm_warning_symbol = "⚠"
-let g:ycm_filetype_blacklist = { 'gitcommit': 1,
-                               \ 'tagbar':    1,
-                               \ 'qf':        1,
-                               \ 'notes':     1,
-                               \ 'markdown':  1,
-                               \ 'unite':     1,
-                               \ 'text':      1,
-                               \ 'vimwiki':   1,
-                               \ 'pandoc':    1,
-                               \ 'infolog':   1,
-                               \ 'mail':      1
-                               \}
-
-" syntastic
-" let g:syntastic_mode_map = { 'mode': 'passive',
-"                            \ 'active_filetypes': [],
-"                            \ 'passive_filetypes': []
-"                            \}
-" let g:syntastic_python_python_exec = '/path/to/python3'
-" let g:syntastic_python_checkers = ['pyflakes']
-" let g:syntastic_cpp_compiler = 'clang++'
-" let g:syntastic_cpp_compiler_options = ' -std=c++17 -stdlib=libstdc++'
-" let g:syntastic_cpp_checkers = ['cppcheck']
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
 
 " Cpp
 let g:cpp_class_scope_highlight = 1
@@ -134,6 +95,13 @@ nmap <c-h> :wincmd p<cr>
 nmap <c-f> :ClangFormat<cr>
 nmap <c-s> :SyntasticToggleMode<cr>
 nmap <c-x> :SyntaxToggle<cr>
+
+" Tab or Shift-Tab selects the next/preview option
+" Enter/Esc confirm/cancels completion
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <expr> <Esc>   pumvisible() ? "\<C-e>\<Esc>" : "\<Esc>"
 
 " <leader>
 let mapleader = " "
