@@ -15,7 +15,7 @@ Plug 'luochen1990/rainbow'
 " Navigation
 Plug 'moll/vim-bbye'
 Plug 'justinmk/vim-dirvish'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jremmen/vim-ripgrep'
 " Lnaguage Server Protocol support
