@@ -19,3 +19,4 @@ nvim-cmake() { find "$@" -name "CMakeLists.txt" | xargs -r nvim}
 nvim-files() { find "$@" -type f -printf '%f\t%p\n' | sort | cut -f 2 | xargs -r nvim }
 nvim-diff() { git diff --name-only | uniq | xargs -r nvim }
 
+alias svim='vim -u ~/SpaceVim/vimrc'
