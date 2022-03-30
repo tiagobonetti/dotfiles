@@ -1,6 +1,12 @@
 [submodule "zsh-autosuggestions"]
-  path = zsh-custom/plugins/zsh-autosuggestions
-  url = git@github.com:zsh-users/zsh-autosuggestions.git
+	path = zsh-custom/plugins/zsh-autosuggestions
+	url = git@github.com:zsh-users/zsh-autosuggestions.git
+	shallow = true
 [submodule "external/dell-xps-9570-ubuntu-respin"]
 	path = external/dell-xps-9570-ubuntu-respin
 	url = git@github.com:JackHack96/dell-xps-9570-ubuntu-respin.git
+	shallow = true
+[submodule "zsh-custom/themes/powerlevel10k"]
+	path = zsh-custom/themes/powerlevel10k
+	url = git@github.com:romkatv/powerlevel10k.git
+	shallow = true
