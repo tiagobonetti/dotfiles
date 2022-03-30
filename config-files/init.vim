@@ -18,7 +18,7 @@ Plug 'justinmk/vim-dirvish'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jremmen/vim-ripgrep'
-" Lnaguage Server Protocol support
+" Language Server Protocol support
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
@@ -30,6 +30,8 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'rhysd/vim-clang-format'
 " QML
 Plug 'peterhoeg/vim-qml'
+"Python
+Plug 'psf/black', { 'branch': 'stable' }
 call plug#end()
 
 " appearance
@@ -57,6 +59,9 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+
+" always copy the backup into the file so file-watchers can detect the change
+set backupcopy=yes
 
 " makefiles
 autocmd FileType make setlocal noexpandtab
@@ -129,9 +134,6 @@ nmap <leader>bwS :bufdo! %S/\<<c-r><c-w>\>/
 " access and load vimrc
 nmap <leader>vr :e $MYVIMRC<cr>
 nmap <leader>vs :source $MYVIMRC<cr>
-" ycm
-nmap <leader>yc :YcmForceCompileAndDiagnostics<cr>
-nmap <leader>yg :YcmCompleter GoToDefinitionElseDeclaration<cr>
 
 " exit terminal with ESC
 tnoremap <esc> <c-\><c-n>
