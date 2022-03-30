@@ -1,3 +1,6 @@
 [submodule "zsh-autosuggestions"]
   path = zsh-custom/plugins/zsh-autosuggestions
   url = git@github.com:zsh-users/zsh-autosuggestions.git
+[submodule "external/dell-xps-9570-ubuntu-respin"]
+	path = external/dell-xps-9570-ubuntu-respin
+	url = git@github.com:JackHack96/dell-xps-9570-ubuntu-respin.git
