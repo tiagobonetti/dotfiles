@@ -18,6 +18,7 @@ require('packer').startup(function(use)
   use 'tpope/vim-commentary' -- Change surrounds <l>cs{(
   -- Visuals
   use 'feline-nvim/feline.nvim' 
+  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
   use 'lewis6991/gitsigns.nvim'
   use 'iCyMind/NeoSolarized'  -- TODO: review
   use 'RRethy/vim-illuminate' -- TODO: review
@@ -28,9 +29,7 @@ require('packer').startup(function(use)
 -- use'junegunn/fzf', { 'do': { -> fzf#install() } }
 -- use 'junegunn/fzf.vim'
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0', -- branch = '0.1.x',
-     requires = { {'nvim-lua/plenary.nvim'} }
-  }
+    'nvim-telescope/telescope.nvim', tag = '0.1.*', requires = { {'nvim-lua/plenary.nvim'} } }
   use 'jremmen/vim-ripgrep'
   -- Language Server Protocol support
   use { "williamboman/mason.nvim" }
@@ -95,6 +94,7 @@ vim.cmd([[ autocmd FileType c,cpp setlocal commentstring=//\ %s ]])
 
 -- Initialize lua plugins
 require('feline').setup()
+require("bufferline").setup{}
 require('gitsigns').setup()
 require("mason").setup()
 
@@ -164,11 +164,9 @@ nmap <leader>bws :bufdo! %s/\<<c-r><c-w>\>/
 nmap <leader>bwS :bufdo! %S/\<<c-r><c-w>\>/
 ]])
 
--- Access and load vimrc
-vim.cmd([[
-nmap <leader>vr :e $MYVIMRC<cr>
-nmap <leader>vs :source $MYVIMRC<cr>
-]])
+-- Edit init.vim
+-- TODO: figure out a simple way to reload the config
+vim.cmd([[ nmap <leader>ie :e $MYVIMRC<cr> ]])
 
 -- Exit terminal with ESC
 vim.cmd([[ tnoremap <esc> <c-\><c-n> ]])
@@ -183,6 +181,16 @@ noremap  <Up>    <nop>
 noremap  <Down>  <nop>
 noremap  <Left>  <nop>
 noremap  <Right> <nop>
+]])
+
+
+
+-- Telescope: Using Lua functions
+vim.cmd([[
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 ]])
 
 -- FZF
