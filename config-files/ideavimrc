@@ -1,36 +1,27 @@
-set number
-
 " use system clipboard"
 set clipboard=unnamedplus,unnamed,ideaput
 
+set number
 set visualbell
-set noerrorbells
 
 " enable plugins
 set surround
 set commentary
 set multiple-cursors
 
+" set CTRl+J/K form the IDE (to move between tabs)
+nmap <C-K> :action NextTab<cr>
+nmap <C-J> :action PreviousTab<cr>
+sethandler <C-K> a:vim
+sethandler <C-J> a:vim
+
 " <leader>
 let mapleader = " "
-
-nmap <leader>s  :shell<cr>
-
-nmap <leader>vs :source ~/.ideavimrc<cr>
-
-nmap <leader>f  :action ReformatCode<cr>
-
-" current word commands
-" nmap <leader>ws :%s/\<<c-r><c-w>\>/
-nmap <leader>ws :%s/\<<c-r><c-w>\>/
-
+" increment/decrement
+nmap <leader>a <c-a>
+nmap <leader>x <c-x>
 " navigate tabs
 nmap <leader>j :action PreviousTab<cr>
 nmap <leader>k :action NextTab<cr>
 
-" use increment/decrement using leader
-nmap <leader>a <c-a>
-nmap <leader>x <c-x>
 
-" code navigation
-map <Leader>b :action GotoDeclaration<CR>
