@@ -1,5 +1,5 @@
 " use system clipboard"
-set clipboard=unnamedplus,unnamed,ideaput
+set clipboard=unnamedplus
 
 set number
 set visualbell
