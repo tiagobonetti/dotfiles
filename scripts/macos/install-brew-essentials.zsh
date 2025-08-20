@@ -11,28 +11,30 @@ formulae=(
   "gh"            # GitHub CLI
   "git"
   "git-lfs"
+  "ipython"
   "llvm"
   "neovim"        # Better vim
   "ninja"
-  "romkatv/powerlevel10k/powerlevel10k"
-  "python@3.10"
+  "python@3.12"
   "ripgrep"       # Better grep
+  "romkatv/powerlevel10k/powerlevel10k"
   "tre-command"   # Better tree
 )
 
 casks=(
-  "gitkraken"
+  "fork"
+  "google-chrome"
+  "handbrake-app"            # Video conversion tool
   "iterm2"
   "jetbrains-toolbox"
   "monitorcontrol"           # Control external display settings
   "mos"                      # Better mouse scrooling
-  "visual-studio-code"
-  #
+  "stats"                    # show system stats
+  "vlc"
   # "alfred"                 # better launcher
-  # "elmedia-player"         # Media player
   # "forklift mactex-no-gui" # File manager
-  # "handbrake"              # Video transcode
   # "steermouse"             # Customize mouse buttons
+  # "visual-studio-code"
 )
 
 echo "formulae:" ${formulae[@]}
