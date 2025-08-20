@@ -5,11 +5,26 @@ import argparse
 # Map dotfiles to symlink locations
 CONFIGS = {
     "zsh": {"dotfile": "zshrc", "symlink": ".zshrc"},
-    "neovim-vim": {"dotfile": "init.vim", "symlink": ".config/nvim/init.vim"},
-    "neovim-lua": {"dotfile": "init.lua", "symlink": ".config/nvim/init.lua"},
-    "spacevim": {"dotfile": "spacevim-init.toml", "symlink": ".SpaceVim.d/init.toml"},
-    "ideavim": {"dotfile": "ideavimrc", "symlink": ".ideavimrc"},
-    "conan-profile": {"dotfile": "conan-profile-macos", "symlink": ".conan/profile/default"},
+    "neovim-vim": {
+        "dotfile": "init.vim",
+        "symlink": ".config/nvim/init.vim",
+    },
+    "neovim-lua": {
+        "dotfile": "init.lua",
+        "symlink": ".config/nvim/init.lua",
+    },
+    "spacevim": {
+        "dotfile": "spacevim-init.toml",
+        "symlink": ".SpaceVim.d/init.toml",
+    },
+    "ideavim": {
+        "dotfile": "ideavimrc",
+        "symlink": ".ideavimrc",
+    },
+    "conan-profile": {
+        "dotfile": "conan-profile-macos",
+        "symlink": ".conan/profiles/default",
+    },
 }
 
 
@@ -47,11 +62,16 @@ def unlink(symlink: str, **kwargs):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Link (or unlink) dotfiles.')
-    parser.add_argument('-u', '--unlink', action='store_true',
-                        help='unlink dotfiles and restores backups')
-    parser.add_argument('config', choices=CONFIGS.keys(),
-                        help='Choose config file to (un)link')
+    parser = argparse.ArgumentParser(description="Link (or unlink) dotfiles.")
+    parser.add_argument(
+        "-u",
+        "--unlink",
+        action="store_true",
+        help="unlink dotfiles and restores backups",
+    )
+    parser.add_argument(
+        "config", choices=CONFIGS.keys(), help="Choose config file to (un)link"
+    )
 
     args = parser.parse_args()
     (unlink if args.unlink else link)(**CONFIGS[args.config])
