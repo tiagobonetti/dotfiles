@@ -17,7 +17,6 @@ formulae=(
   "ninja"
   "python@3.12"
   "ripgrep"       # Better grep
-  "romkatv/powerlevel10k/powerlevel10k"
   "tre-command"   # Better tree
 )
 
