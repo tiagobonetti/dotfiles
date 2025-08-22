@@ -17,7 +17,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 # This is an theme config to avoid showing default username
-export DEFAULT_USER="tbonetti"
+# Sometimes my username has a dot, sometimes not...
+for name (tbonetti t.bonetti) [[ $USER == $name ]] && export DEFAULT_USER=$name && break
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
