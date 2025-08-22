@@ -28,6 +28,7 @@ casks=(
   "jetbrains-toolbox"
   "monitorcontrol"           # Control external display settings
   "mos"                      # Better mouse scrooling
+  "slack"
   "stats"                    # show system stats
   "vlc"
   # "alfred"                 # better launcher
