@@ -21,10 +21,6 @@ CONFIGS = {
         "dotfile": "ideavimrc",
         "symlink": ".ideavimrc",
     },
-    "conan-profile": {
-        "dotfile": "conan-profile-macos",
-        "symlink": ".conan/profiles/default",
-    },
 }
 
 
