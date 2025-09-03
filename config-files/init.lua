@@ -12,7 +12,6 @@ require('packer').startup(function(use)
   --  Small functions
   use 'tpope/vim-sensible'   -- Defaults
   use 'tpope/vim-abolish'    -- Better substitute :%S//
-  use 'tpope/vim-abolish'    -- Better substitute :%S//
   use 'tpope/vim-fugitive'   -- Git wrapper :Gsplit
   use 'tpope/vim-surround'   -- Change surrounds <l>cs{(
   use 'tpope/vim-commentary' -- Change surrounds <l>cs{(

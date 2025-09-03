@@ -2,7 +2,6 @@ call plug#begin('~/.config/nvim/plugged')
 " small functions
 Plug 'tpope/vim-sensible'    "Defaults
 Plug 'tpope/vim-abolish'     "Better substitute :%S//
-Plug 'tpope/vim-abolish'     "Better substitute :%S//
 Plug 'tpope/vim-fugitive'    "Git wrapper :Gsplit
 Plug 'tpope/vim-surround'    "Change surrounds <l>cs{(
 Plug 'tpope/vim-commentary'  "Change surrounds <l>cs{(
