@@ -13,3 +13,6 @@
 # Python
 *.pyc
 __pycache__/
+
+# AI agent instructions
+AGENTS.md
