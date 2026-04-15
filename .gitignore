@@ -3,3 +3,6 @@
 *.log
 __pycache__/*
 
+# Machine-local overrides
+zsh-custom/local.zsh
+

@@ -1,0 +1,7 @@
+# local.zsh.example — copy to local.zsh and fill in real values.
+
+# Example: machine-specific build flags
+# export CMAKE_EXTRA_FLAGS="-DCMAKE_BUILD_TYPE=Debug"
+
+# Example: path to a local SDK that lives in a non-standard location
+# export MY_SDK_ROOT="/opt/local/sdk"
