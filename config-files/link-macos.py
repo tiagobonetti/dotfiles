@@ -21,6 +21,14 @@ CONFIGS = {
         "dotfile": "ideavimrc",
         "symlink": ".ideavimrc",
     },
+    "opencode": {
+        "dotfile": "opencode-config.json",
+        "symlink": ".config/opencode/config.json",
+    },
+    "opencode-tui": {
+        "dotfile": "opencode-tui.json",
+        "symlink": ".config/opencode/tui.json",
+    },
 }
 
 

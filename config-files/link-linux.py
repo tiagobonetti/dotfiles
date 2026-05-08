@@ -10,6 +10,8 @@ LINKS_DICT = {
     "init.vim": ".config/nvim/init.vim",
     "spacevim-init.toml": ".SpaceVim.d/init.toml",
     "ideavimrc": ".ideavimrc",
+    "opencode-config.json": ".config/opencode/config.json",
+    "opencode-tui.json": ".config/opencode/tui.json",
 }
 
 
