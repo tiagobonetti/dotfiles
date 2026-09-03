@@ -33,6 +33,10 @@ CONFIGS = {
         "dotfile": "ghostty.conf",
         "symlink": "Library/Application Support/com.mitchellh.ghostty/config.ghostty",
     },
+    "lazygit": {
+        "dotfile": "lazygit.yml",
+        "symlink": "Library/Application Support/lazygit/config.yml",
+    },
 }
 
 
