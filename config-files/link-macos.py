@@ -29,6 +29,10 @@ CONFIGS = {
         "dotfile": "opencode-tui.json",
         "symlink": ".config/opencode/tui.json",
     },
+    "ghostty": {
+        "dotfile": "ghostty.conf",
+        "symlink": "Library/Application Support/com.mitchellh.ghostty/config.ghostty",
+    },
 }
 
 
