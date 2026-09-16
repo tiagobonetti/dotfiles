@@ -6,5 +6,24 @@
       "~/.conan2/**": "allow",
       "/tmp/opencode/**": "allow"
     }
+  },
+  "mcp": {
+    "atlassian": {
+      "type": "remote",
+      "url": "https://mcp.atlassian.com/v2/mcp",
+      "enabled": true
+    }
+  },
+  "tools": {
+    "atlassian_*": false
+  },
+  "agent": {
+    "atlassian": {
+      "description": "Use this agent for Jira and Confluence work.",
+      "mode": "subagent",
+      "tools": {
+        "atlassian_*": true
+      }
+    }
   }
 }
