@@ -29,6 +29,10 @@ CONFIGS = {
         "dotfile": "opencode-tui.json",
         "symlink": ".config/opencode/tui.json",
     },
+    "herdr": {
+        "dotfile": "herdr-config.toml",
+        "symlink": ".config/herdr/config.toml",
+    },
     "ghostty": {
         "dotfile": "ghostty.conf",
         "symlink": "Library/Application Support/com.mitchellh.ghostty/config.ghostty",
