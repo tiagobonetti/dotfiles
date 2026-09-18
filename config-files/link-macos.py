@@ -25,6 +25,10 @@ CONFIGS = {
         "dotfile": "opencode-config.json",
         "symlink": ".config/opencode/config.json",
     },
+    "opencode-agents": {
+        "dotfile": "opencode-AGENTS.md",
+        "symlink": ".config/opencode/AGENTS.md",
+    },
     "opencode-tui": {
         "dotfile": "opencode-tui.json",
         "symlink": ".config/opencode/tui.json",
