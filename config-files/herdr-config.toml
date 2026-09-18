@@ -13,4 +13,4 @@ name = "solarized"
 auto_switch = false
 
 [worktrees]
-directory = "~/lumicks/worktrees"
+directory = "~/lumicks/repos/worktrees/"
