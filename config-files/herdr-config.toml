@@ -14,3 +14,9 @@ auto_switch = false
 
 [worktrees]
 directory = "~/lumicks/repos/worktrees/"
+
+[[keys.command]]
+key = "prefix+f"
+type = "shell"
+command = "open -a Fork \"${HERDR_ACTIVE_PANE_CWD:-.}\""
+description = "open current working directory in Fork"
