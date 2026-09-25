@@ -17,6 +17,7 @@ formulae=(
   "ninja"
   "python@3.12"
   "ripgrep"       # Better grep
+  "terminal-notifier" # Send macOS notifications from the command line
   "tre-command"   # Better tree
 )
 
@@ -42,4 +43,3 @@ brew install ${formulae[@]}
 
 echo "casks:   " ${casks[@]}
 brew install --casks  ${casks[@]}
-
