@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opencode.ai/skills/plan-day/config.schema.json",
+  "title": "Plan day configuration",
+  "description": "Configuration for reading a published calendar ICS feed. Keep the feed URL private.",
+  "type": "object",
+  "properties": {
+    "calendar_ics_url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://",
+      "description": "Private HTTP(S) URL for the published calendar ICS feed."
+    }
+  },
+  "required": [
+    "calendar_ics_url"
+  ],
+  "additionalProperties": false
+}

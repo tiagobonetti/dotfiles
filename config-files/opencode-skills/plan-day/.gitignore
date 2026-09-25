@@ -1,0 +1,7 @@
+# Private local settings
+/config.json
+/preferences.md
+
+# Local runtime files
+/.venv/
+/__pycache__/

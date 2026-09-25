@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-from pathlib import Path
 import argparse
+
+from link_utils import link, unlink
 
 # Map dotfiles to symlink locations
 # - Keys are dotfiles paths relative to the repo folder
@@ -13,39 +14,8 @@ LINKS_DICT = {
     "opencode-config.json": ".config/opencode/config.json",
     "opencode-AGENTS.md": ".config/opencode/AGENTS.md",
     "opencode-tui.json": ".config/opencode/tui.json",
+    "opencode-skills/plan-day": ".config/opencode/skills/plan-day",
 }
-
-
-def link(dotfile: str, symlink: str):
-    target = Path.home() / symlink
-
-    if target.is_symlink():
-        print(f"'{target.name}' is a symlink: removing")
-        target.unlink()
-
-    elif target.is_file():
-        backup = target.with_name(target.name + ".bk")
-        print(f"'{target.name}' is a file: making a backup as '{backup}'")
-        target.replace(backup)
-
-    source = Path(__file__).resolve().parent / dotfile
-    print(f"Creating link '{target}' to '{source}'")
-    target.symlink_to(source)
-
-
-def unlink(symlink: str):
-    target = Path.home() / symlink
-
-    if not target.is_symlink():
-        print(f"'{target.name}' isn't a link: ignoring")
-        return
-
-    print(f"unlinking '{target.name}'")
-    target.unlink()
-    backup = target.with_name(target.name + ".bk")
-    if backup.is_file():
-        print(f"Restoring backup of'{target.name}'")
-        backup.replace(target)
 
 
 def main():
@@ -55,7 +25,7 @@ def main():
     args = parser.parse_args()
 
     for k, v in LINKS_DICT.items():
-        unlink(symlink=k) if args.unlink else link(dotfile=k, symlink=v)
+        unlink(symlink=v) if args.unlink else link(dotfile=k, symlink=v)
 
 
 if __name__ == "__main__":
