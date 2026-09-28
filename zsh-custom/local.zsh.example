@@ -3,5 +3,7 @@
 # Example: machine-specific build flags
 # export CMAKE_EXTRA_FLAGS="-DCMAKE_BUILD_TYPE=Debug"
 
-# Example: path to a local SDK that lives in a non-standard location
-# export MY_SDK_ROOT="/opt/local/sdk"
+# Example: build with a specific macOS SDK and deployment target.
+# Use this when targeting an older macOS version than the one running locally.
+# export SDKROOT="/Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk"
+# export MACOSX_DEPLOYMENT_TARGET="15.5"
