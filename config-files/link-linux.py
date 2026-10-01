@@ -7,6 +7,8 @@ from link_utils import link, unlink
 # - Keys are dotfiles paths relative to the repo folder
 # - Values are symlink names relative to the user home folder
 LINKS_DICT = {
+    "gitconfig": ".gitconfig",
+    "gitignore-global": ".config/git/ignore",
     "zshrc": ".zshrc",
     "init.vim": ".config/nvim/init.vim",
     "spacevim-init.toml": ".SpaceVim.d/init.toml",

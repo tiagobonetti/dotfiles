@@ -1,0 +1,33 @@
+[include]
+	path = ~/.gitconfig.local
+
+[core]
+	editor = env NVIM_APPNAME=nvim-lazy nvim
+	pager = delta
+	excludesfile = ~/.config/git/ignore
+
+[diff]
+	tool = vimdiff
+	algorithm = histogram
+
+[difftool "vimdiff"]
+	path = nvim
+
+[merge]
+	tool = vimdiff
+	conflictstyle = zdiff3
+
+[mergetool "vimdiff"]
+	path = nvim
+
+[rerere]
+	enabled = true
+
+[interactive]
+	diffFilter = delta --color-only
+
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status

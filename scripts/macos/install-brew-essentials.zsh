@@ -10,6 +10,7 @@ formulae=(
   "fzf"           # Command line fuzzy finder
   "gh"            # GitHub CLI
   "git"
+  "git-delta"     # Syntax-highlighted Git diffs in the terminal
   "git-lfs"
   "ipython"
   "llvm"

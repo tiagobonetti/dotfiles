@@ -5,6 +5,10 @@ from link_utils import link, unlink
 
 # Map dotfiles to symlink locations
 CONFIGS = {
+    "git": [
+        {"dotfile": "gitconfig", "symlink": ".gitconfig"},
+        {"dotfile": "gitignore-global", "symlink": ".config/git/ignore"},
+    ],
     "zsh": [{"dotfile": "zshrc", "symlink": ".zshrc"}],
     "neovim-vim": [
         {
