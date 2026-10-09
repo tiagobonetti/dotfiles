@@ -8,6 +8,13 @@
 - Search for existing implementations and tests before adding new code.
 - Keep changes scoped to the task. Do not modify unrelated user changes, generated files, vendored code, or dependency lockfiles without a reason.
 
+## Check before installing tools
+
+- Before installing, upgrading, or otherwise changing any tool or dependency on the host system, first check whether it is already available and inspect the repository’s documented toolchain and existing environment.
+- Report what is missing, why it is needed, the proposed installation method, and any system-wide or transitive changes it may make.
+- Ask for my approval before proceeding with the installation.
+- Prefer tools already available or isolated project environments; don’t update package managers or unrelated tools as part of an install.
+
 ## Validation
 
 - Use the repository's documented build, test, lint, and formatting commands.
