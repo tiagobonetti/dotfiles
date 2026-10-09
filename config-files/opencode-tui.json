@@ -3,4 +3,7 @@
   "scroll_acceleration": {
     "enabled": true
   },
+  "keybinds": {
+    "which_key_toggle": "<leader>k"
+  }
 }
