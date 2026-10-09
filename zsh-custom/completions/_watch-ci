@@ -1,0 +1,22 @@
+#compdef watch-ci
+
+_watch-ci() {
+  local state
+  local -a branches
+
+  _arguments -s \
+    '(-h --help)'{-h,--help}'[Show help]' \
+    '--repo=[GitHub repository]:repository:' \
+    '--interval=[Polling interval in seconds]:seconds:' \
+    '1:run ID or branch:->target' \
+    '*:: :->args'
+
+  case "$state" in
+    target)
+      branches=("${(@f)$(git for-each-ref --format='%(refname:short)' refs/heads 2>/dev/null)}")
+      _describe 'local branch' branches
+      ;;
+  esac
+}
+
+_watch-ci "$@"

@@ -2,6 +2,9 @@
 alias l='ls -gAFGh'
 alias gitk='gitk --max-count=500'
 
+# Use a function so zsh can complete watch-ci as its own command.
+watch-ci() { "$HOME/dotfiles/tools/watch-ci.py" "$@" }
+
 # avoid unecesary corrections (usually to paths) on this commands
 alias git='nocorrect git'
 alias vim='nocorrect vim'
@@ -31,5 +34,3 @@ case "$OSTYPE" in
     alias fd='fdfind'
   ;;
 esac
-
-
