@@ -13,6 +13,8 @@ return {
         
         -- Python tools  
         "pyright",
+        "black",
+        "isort",
         "ruff",
         "debugpy", -- Python debugger
         
