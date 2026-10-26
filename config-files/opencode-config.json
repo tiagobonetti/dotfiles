@@ -1,29 +1,29 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "permission": {
-    "external_directory": {
-      "~/lumicks/repos/**": "allow",
-      "~/.conan2/**": "allow",
-      "/tmp/opencode/**": "allow"
-    }
-  },
   "mcp": {
-    "atlassian": {
-      "type": "remote",
-      "url": "https://mcp.atlassian.com/v2/mcp",
-      "enabled": true
+    "servers": {
+      "atlassian": {
+        "type": "remote",
+        "url": "https://mcp.atlassian.com/v2/mcp",
+        "disabled": false
+      }
     }
   },
-  "tools": {
-    "atlassian_*": false
-  },
-  "agent": {
+  "permissions": [
+    { "action": "external_directory", "resource": "*", "effect": "ask" },
+    { "action": "external_directory", "resource": "~/lumicks/**", "effect": "allow" },
+    { "action": "external_directory", "resource": "~/.conan2/**", "effect": "allow" },
+    { "action": "external_directory", "resource": "/tmp/opencode/**", "effect": "allow" },
+    { "action": "external_directory", "resource": "~/.config/opencode/skills/**", "effect": "allow" },
+    { "action": "atlassian_*", "resource": "*", "effect": "deny" }
+  ],
+  "agents": {
     "atlassian": {
       "description": "Use this agent for Jira and Confluence work.",
       "mode": "subagent",
-      "tools": {
-        "atlassian_*": true
-      }
+      "permissions": [
+        { "action": "atlassian_*", "resource": "*", "effect": "allow" }
+      ]
     }
   }
 }

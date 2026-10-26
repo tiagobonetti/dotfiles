@@ -13,9 +13,9 @@ LINKS_DICT = {
     "init.vim": ".config/nvim/init.vim",
     "spacevim-init.toml": ".SpaceVim.d/init.toml",
     "ideavimrc": ".ideavimrc",
-    "opencode-config.json": ".config/opencode/config.json",
+    "opencode-config.json": ".config/opencode/opencode.json",
     "opencode-AGENTS.md": ".config/opencode/AGENTS.md",
-    "opencode-tui.json": ".config/opencode/tui.json",
+    "opencode-cli.json": ".config/opencode/cli.json",
     "opencode-skills/plan-day": ".config/opencode/skills/plan-day",
 }
 

@@ -37,7 +37,7 @@ CONFIGS = {
     "opencode": [
         {
             "dotfile": "opencode-config.json",
-            "symlink": ".config/opencode/config.json",
+            "symlink": ".config/opencode/opencode.json",
         }
     ],
     "opencode-agents": [
@@ -46,10 +46,10 @@ CONFIGS = {
             "symlink": ".config/opencode/AGENTS.md",
         }
     ],
-    "opencode-tui": [
+    "opencode-cli": [
         {
-            "dotfile": "opencode-tui.json",
-            "symlink": ".config/opencode/tui.json",
+            "dotfile": "opencode-cli.json",
+            "symlink": ".config/opencode/cli.json",
         }
     ],
     "opencode-plan-day": [
