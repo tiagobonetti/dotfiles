@@ -15,6 +15,9 @@ auto_switch = false
 [worktrees]
 directory = "~/lumicks/repos/worktrees/"
 
+[keys]
+prefix = "ctrl+h"
+
 [[keys.command]]
 key = "prefix+f"
 type = "shell"
