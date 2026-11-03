@@ -23,3 +23,16 @@ key = "prefix+f"
 type = "shell"
 command = "open -a Fork \"${HERDR_ACTIVE_PANE_CWD:-.}\""
 description = "open current working directory in Fork"
+
+[[keys.command]]
+key = "prefix+g"
+type = "shell"
+command = """
+cd "${HERDR_ACTIVE_PANE_CWD:-.}" || exit
+output=$(gh pr view --web 2>&1) || {
+  status=$?
+  herdr notification show "Could not open PR" --body "${output:-gh pr view failed (exit $status)}"
+  exit "$status"
+}
+"""
+description = "open current branch PR in browser"
