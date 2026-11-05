@@ -8,6 +8,20 @@
 - Search for existing implementations and tests before adding new code.
 - Keep changes scoped to the task. Do not modify unrelated user changes, generated files, vendored code, or dependency lockfiles without a reason.
 
+## Code quality
+
+- Readability is the highest priority: clear names, simple control flow, small focused functions, no cleverness.
+- Match the local style of existing code; suggest modernization separately rather than mixing it into unrelated changes.
+- Prefer explicit over implicit: avoid hidden side effects, global state, and magic values.
+- Avoid speculative generality: no abstractions or parameters "for later".
+- Only optimize for performance when explicitly requested or a bottleneck is measured.
+- Prefer failing fast with precise error types. Where errors must be absorbed to keep running, handle them deliberately: log or report them, never swallow silently.
+- Add or update tests for behavior changes, with a regression test for each bug fix.
+- Keep new code clean under the project's linters and static analysis tools.
+- Use static typing in Python and const-correctness in C++.
+- Prefer modern language standards, idioms, and APIs supported by the project's toolchain, especially in Python and C++. Ask before raising minimum versions.
+- Prefer the standard library; ask before adding third-party dependencies.
+
 ## Check before installing tools
 
 - Before installing, upgrading, or otherwise changing any tool or dependency on the host system, first check whether it is already available and inspect the repository’s documented toolchain and existing environment.
