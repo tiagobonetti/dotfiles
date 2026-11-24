@@ -1,0 +1,8 @@
+// Base configuration for markdownlint-cli2 used by nvim-lint in lvim (see lua/plugins/linting.lua).
+// Repo-local .markdownlint-cli2.* or .markdownlint.* files still override these defaults.
+{
+  "config": {
+    // Disable MD013 (line-length) warnings on long bullets, links, and Markdown tables
+    "MD013": false
+  }
+}
