@@ -16,7 +16,6 @@ LINKS_DICT = {
     "opencode-config.json": ".config/opencode/opencode.json",
     "opencode-AGENTS.md": ".config/opencode/AGENTS.md",
     "opencode-cli.json": ".config/opencode/cli.json",
-    "opencode-skills/plan-day": ".config/opencode/skills/plan-day",
 }
 
 

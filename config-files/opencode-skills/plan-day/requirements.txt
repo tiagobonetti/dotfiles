@@ -1,3 +1,0 @@
-icalendar
-python-dateutil
-recurring-ical-events

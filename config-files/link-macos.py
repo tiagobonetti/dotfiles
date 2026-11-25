@@ -52,12 +52,6 @@ CONFIGS = {
             "symlink": ".config/opencode/cli.json",
         }
     ],
-    "opencode-plan-day": [
-        {
-            "dotfile": "opencode-skills/plan-day",
-            "symlink": ".config/opencode/skills/plan-day",
-        },
-    ],
     "herdr": [
         {
             "dotfile": "herdr-config.toml",
