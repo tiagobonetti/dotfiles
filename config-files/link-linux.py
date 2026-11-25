@@ -14,7 +14,6 @@ LINKS_DICT = {
     "spacevim-init.toml": ".SpaceVim.d/init.toml",
     "ideavimrc": ".ideavimrc",
     "opencode-config.json": ".config/opencode/opencode.json",
-    "opencode-AGENTS.md": ".config/opencode/AGENTS.md",
     "opencode-cli.json": ".config/opencode/cli.json",
 }
 

@@ -40,12 +40,6 @@ CONFIGS = {
             "symlink": ".config/opencode/opencode.json",
         }
     ],
-    "opencode-agents": [
-        {
-            "dotfile": "opencode-AGENTS.md",
-            "symlink": ".config/opencode/AGENTS.md",
-        }
-    ],
     "opencode-cli": [
         {
             "dotfile": "opencode-cli.json",
